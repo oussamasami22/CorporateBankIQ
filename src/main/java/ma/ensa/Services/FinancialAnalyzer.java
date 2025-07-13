@@ -18,11 +18,16 @@ public class FinancialAnalyzer {
 
    }
 
-   public  static Map<String, Double> getTotalAmountByAccount(List<Transaction> transactions){
+   public static Map<String, Double> getTotalAmountByAccount(List<Transaction> transactions) {
       return transactions.stream()
-              .collect(Collectors.groupingBy(t-> t.account, Collectors.summingDouble(t -> t.amount)));
-
+              .filter(t -> t.getAccount() != null && !t.getAccount().isBlank())
+              .collect(Collectors.groupingBy(
+                      Transaction::getAccount,
+                      Collectors.summingDouble(Transaction::getAmount)
+              ));
    }
+
+
    public static void printSummary(String title, Map<String, Double> map) {
       System.out.println("\n=== " + title + " ===");
       map.forEach((k, v) -> System.out.printf("%-20s : $%,.2f\n", k, v));

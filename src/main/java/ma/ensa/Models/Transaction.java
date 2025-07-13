@@ -17,8 +17,17 @@ public class Transaction {
         this.type = type;
         this.category = category;
     }
+    public int getId() { return id; }
+
+    public String getAccount() { return account; }
+    public String getType() { return type; }
+    public double getAmount() { return amount; }   // <-- IMPORTANT !
+    public String getCategory() { return category; }
+
     @Override
     public String toString() {
         return id + "," + localDate + "," + account + "," + type + "," + amount + "," + category;
     }
+
+
 }
