@@ -1,0 +1,12 @@
+=== Total by Category ===
+Utilities            : $1,252,183.72
+Payroll              : $831,777.23
+Crypto               : $784,320.03
+Bonds                : $759,359.93
+Equity               : $638,968.21
+Government_Grant     : $1,067,251.61
+Revenue              : $865,904.39
+Office_Expenses      : $873,050.47
+Maintenance          : $1,018,414.54
+Real_Estate          : $873,209.17
+Client_Payment       : $1,027,067.88

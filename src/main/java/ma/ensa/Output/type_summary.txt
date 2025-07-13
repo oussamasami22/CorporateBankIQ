@@ -1,0 +1,4 @@
+=== Total by Type ===
+INVESTMENT           : $3,055,857.34
+DEPOSIT              : $2,960,223.88
+WITHDRAWAL           : $3,975,425.96

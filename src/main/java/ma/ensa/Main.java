@@ -2,6 +2,7 @@ package ma.ensa;
 
 import ma.ensa.Models.Transaction;
 import ma.ensa.Services.FinancialAnalyzer;
+import ma.ensa.Services.ReportWriter;
 import ma.ensa.Services.TransactionLoader;
 
 import java.util.List;
@@ -26,6 +27,11 @@ public class Main {
         FinancialAnalyzer.printSummary(" Total vy Transaction Category", totalByCategory);
         Map<String,Double> totalByAccount = FinancialAnalyzer.getTotalAmountByAccount(transactions);
         FinancialAnalyzer.printSummary(" Total by Account ",totalByAccount);
+
+        ReportWriter.writeSummaryToFile("Total by Type", FinancialAnalyzer.getTotalAmountByType(transactions), "src/main/java/ma/ensa/Output/type_summary.txt");
+        ReportWriter.writeSummaryToFile("Total by Category", FinancialAnalyzer.getTotalAmountByCategory(transactions), "src/main/java/ma/ensa/Output/category_summary.txt");
+        ReportWriter.writeSummaryToFile("Total by Account", FinancialAnalyzer.getTotalAmountByAccount(transactions), "src/main/java/ma/ensa/Output/account_summary.txt");
+
 
     }
 }
